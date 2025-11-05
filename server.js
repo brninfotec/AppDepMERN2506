@@ -3,7 +3,8 @@ const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcrypt");
+require("dotenv").config();
 
 let app = express();
 app.use(cors());
@@ -152,8 +153,8 @@ app.delete("/deleteProfile",upload.none(),async(req,res)=>{
 })
 
 
-app.listen(2222,()=>{
-    console.log("Listening to port 2222");
+app.listen(process.env.PORT,()=>{
+    console.log(`Listening to port ${process.env.PORT}`);
 })
 
 
@@ -174,7 +175,7 @@ let user = new mongoose.model("users",userSchema,"2506Postmethod");
 
 let connectedToMDB = async ()=>{
     try{
-        await mongoose.connect("mongodb+srv://vemulajyothi:jyothi9398@cluster0.90llw4m.mongodb.net/MERN2506Students?retryWrites=true&w=majority&appName=Cluster0");
+        await mongoose.connect(process.env.MDBURL);
         console.log("Successfully Connected To MDB ");
       }catch(err){
         console.log("Unable To Connect MDB ");
