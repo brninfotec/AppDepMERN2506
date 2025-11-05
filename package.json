@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-     "build": "yarn install --cwd ./client && yarn build --cwd ./client && yarn install"
-  },
+  "start": "node server.js",
+  "build": "yarn install --cwd ./client && yarn build --cwd ./client"
+},
+
   "keywords": [],
   "author": "",
   "license": "ISC",
