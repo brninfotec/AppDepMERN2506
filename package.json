@@ -4,7 +4,8 @@
   "main": "server.js",
   "scripts": {
   "start": "node server.js",
-  "build": "yarn add ./client && yarn build ./client && npm install"
+  "build": "yarn install --cwd client && yarn build --cwd client"
+
 },
   "dependencies": {
     "bcrypt": "^6.0.0",
